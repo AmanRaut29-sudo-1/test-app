@@ -1,5 +1,7 @@
 # need to create pod name web-pod with image busybox and it should sleep for 3200 and allow the pod to able to allow system time.
 # k run web-pod --image=busybox --command sleep 3200 --dry-run=client -o yaml :-  this will give a yaml for pod web-pod with image busybox and sleep 3200
+# sleep 3200 container runs for 3200 sec that is 53 mins and then exits .
+# capabilities: add: ["SYS_TIME"] Grants permission to change system time inside the container
 
 apiVersion: v1
 kind: Pod
