@@ -1,4 +1,7 @@
-# k create deployment myproject --image=nginx:1.16 --replicas=1 --dry-run=client -o yaml
+# create new deployment with name myproject with image of nginx:1.16 , next after creation do rolling update to deployment with 1.17 image and make sure version upgrade is recorded in resource annotation .
+# k create deployment myproject --image=nginx:1.16 --replicas=1 --dry-run=client -o yaml 
+# kubectl set image deployment/myproject nginx=nginx:1.17 --record  :- settting the image of deploymnt to nginx:1.17 and recording the annotatons .
+# kubectl rollout history deployment/myproject :- to check rollout history .
 
 apiVersion: apps/v1
 kind: Deployment
