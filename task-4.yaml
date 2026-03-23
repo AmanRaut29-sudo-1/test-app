@@ -1,0 +1,2 @@
+# need to run pod name web-nginx with image of 1.17 and label should be tier=webapp
+# k run web-nginx --image=nginx:1.17 --labels  tier=web-app --dry-run=client -o yaml

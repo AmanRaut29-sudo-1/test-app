@@ -1,0 +1,16 @@
+# create static pod on node01 called static pod with image nginx and you have to make sure that it is recreated/restarted automatically in case of any failures
+# static pod :- 
+  # Created directly by kubelet
+  # Not managed by API server / Deployment
+  # Defined as a YAML file on the node
+  # Kubelet automatically restarts it if it fails ✅
+  # Kubelet also creates a mirror pod in the cluster
+
+
+# steps :-
+  # k get nodes
+  # ssh node01
+  # ps aux | grep kubelet
+  # cat /var/lib/kubelet/config.yaml | grep static  ,output  :-  /etc/kubernetes/manifests
+  # cd  /etc/kubernetes/manifests 
+  # create a simple static-pod.yaml file with specifications :- k run  static-pod --image=nginx --dry-run=client -o yaml

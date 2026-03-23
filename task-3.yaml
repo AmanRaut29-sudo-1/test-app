@@ -1,0 +1,2 @@
+# create a deployemtn with name my-deployment and replicas will be 3 , make sure the desired pod will always be running .
+# k create deployment my-deployment --image=nginx --replicas=3 
