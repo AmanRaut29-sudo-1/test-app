@@ -1,0 +1,19 @@
+# create persistent volume with name pv-demo and storage: 100Mi accessModes  - ReadWriteMany and hostPath:      path: /pv/host-data
+# In Kubernetes, a Volume is used to store data so containers don’t lose data when they restart. 📦
+# Containers are ephemeral (data lost on restart ❌) and Volumes make data persistent ✅
+# types of volume :- 
+#  -> emptyDir , hostPath , configMap volume(Mount configMap as files) ,secret volume , persistentVolumeClaim (PVC)
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-demo
+spec:
+  capacity:
+    storage: 100Mi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteMany
+  hostPath:  # Mount node directory into pod
+      path: /pv/host-data
+    

@@ -1,0 +1,25 @@
+# need to upgrade (master and worker node) from 1.18.0 to 1.19.0 and make sure to first drain both the node nd make it available after upgrade 
+
+
+
+# kubectl get nodes 
+# k drain control-plane --ignore-daemonsets 
+# apt update 
+# apt install kubeadm=1.19.0-00
+# kubeadm upgrade apply v.1.19.0
+# apt install kubelet-1.19.0-00
+# systemctl restart kubelet 
+# kubectl get nodes 
+# kubectl uncordon control-plane
+
+
+
+
+# k drain node01 --ignore-daemonsets 
+# ssh node01
+# apt update 
+# apt install kubeadm=1.19.0-00
+# kubeadm upgrade apply v.1.19.0
+#  apt install kubelet-1.19.0-00
+# systemctl restart kubelet 
+# kubectl uncordon node01

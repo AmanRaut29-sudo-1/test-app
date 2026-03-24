@@ -1,0 +1,2 @@
+# use json path to retreive the osimages  of all nodes and store it is file all-nodes-os-info.txt
+# kubectl get nodes -o jsonpath='{.items[*].status.nodeInfo.osImage}' > all-nodes-os-info.txt
