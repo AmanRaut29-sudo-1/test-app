@@ -1,0 +1,2 @@
+# get the node node01 in json format and store the file in ./node-info.json
+# k get node my-cluster-worker -o json > ./node-info.json

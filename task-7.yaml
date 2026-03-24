@@ -1,0 +1,3 @@
+# Need to cresate pod test-pod namepsace custom belonging to environemt(env=test) and backened tier (tier=backend) with image:nginx:1.17
+# k run test-pod --image=nginx:1.17 -l env=test,tier=backend --namespace=custom  -o yaml --dry-run=client 
+# k run test-pod --image=nginx:1.17 --labels env=test,tier=backend --namespace=custom  -o yaml --dry-run=client

@@ -1,0 +1,20 @@
+# create pod with name pod-multi two containers , container1 name and image : nginx , container2 and image :busybox and sleep 3200
+# or :- k run pod-multi --image=nginx -o yaml --dry-run=client 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod-multi
+  name: pod-multi
+spec:
+  containers:
+  - image: nginx
+    name: container1
+  - image: busybox
+    name: container2
+    command: ['sh', '-c', 'sleep 3600']
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
